@@ -1,0 +1,20 @@
+<mat-card *ngIf="problem" class="problem-card">
+  <mat-card-title>
+    <h2 class="mat-h2">{{problem.title}}</h2>
+    <small class="mat-small">
+      {{problem.summary}} ({{problem.difficulty}})
+    </small>
+   </mat-card-title>
+
+  <mat-card-content>
+    <p class="mat-body" [innerHTML]="problem.description"></p>
+  </mat-card-content>
+
+  <mat-card-footer class="solution">
+    <mat-form-field appearance="standard">
+      <mat-label>Solution</mat-label>
+      <input matInput placeholder="Answer">
+    </mat-form-field>
+    <button mat-button type="submit">Submit</button>
+  </mat-card-footer>
+</mat-card>

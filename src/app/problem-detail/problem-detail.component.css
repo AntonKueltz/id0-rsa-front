@@ -1,0 +1,13 @@
+p {
+  text-align: justify;
+}
+
+.problem-card {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.solution {
+  text-align: center;
+}
