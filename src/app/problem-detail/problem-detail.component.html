@@ -11,10 +11,22 @@
   </mat-card-content>
 
   <mat-card-footer class="solution">
-    <mat-form-field appearance="standard">
-      <mat-label>Solution</mat-label>
-      <input matInput placeholder="Answer">
+
+    <!-- Answer form if unsolved-->
+    <div *ngIf="!problem.solved">
+      <mat-form-field appearance="standard">
+        <mat-label>Solution</mat-label>
+        <input matInput type="text" placeholder="Answer" #answer>
+      </mat-form-field>
+      <button mat-button (click)="checkAnswer(answer.value)">
+        Submit
+      </button>
+    </div>
+
+    <!-- Solved icon if solved -->
+    <mat-form-field *ngIf="problem.solved" class="solved-text">
+      Solved <mat-icon>check_circle</mat-icon>
     </mat-form-field>
-    <button mat-button type="submit">Submit</button>
+
   </mat-card-footer>
 </mat-card>

@@ -1,0 +1,6 @@
+<mat-card *ngFor="let problem of problems">
+    <a routerLink="/problems/{{problem.id}}">
+        <mat-card-title>{{problem.title}}</mat-card-title>
+        <mat-card-subtitle>{{problem.summary}}</mat-card-subtitle>
+    </a>
+</mat-card>

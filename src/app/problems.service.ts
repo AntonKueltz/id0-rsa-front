@@ -30,6 +30,13 @@ export class ProblemsService {
         );
     }
 
+    checkAnswer(id: number, answer: string): Observable<boolean> {
+        return this.http.get<boolean>(
+            `${this.problemsUrl}${id}/check`,
+            {params: {answer: answer}}
+        ).pipe(catchError(this.handleError('checkAnswer', false)));
+    }
+
     private handleError<T> (operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
             console.error(error); // log to console

@@ -11,3 +11,7 @@ p {
 .solution {
   text-align: center;
 }
+
+.solved-text {
+    font-size: 24px;
+}
